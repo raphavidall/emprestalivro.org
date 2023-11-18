@@ -1,0 +1,27 @@
+{
+  "name": "emprestalivro.org",
+  "version": "1.0.0",
+  "description": "Aplicação para compartilhamento de livros físicos na comunidade.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/raphavidall/emprestalivro.org.git"
+  },
+  "keywords": [
+    "livros",
+    "emprestimo",
+    "compartilhamento",
+    "utilidade",
+    "social",
+    "livre"
+  ],
+  "author": "Raphaela Vidal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raphavidall/emprestalivro.org/issues"
+  },
+  "homepage": "https://github.com/raphavidall/emprestalivro.org#readme"
+}
