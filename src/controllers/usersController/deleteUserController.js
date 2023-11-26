@@ -1,4 +1,4 @@
-const { deleteUserService }= require("../../services");
+const deleteUserService = require('../../services/usersService/deleteUserService');
 
 
 
@@ -8,9 +8,10 @@ const deleteUserController = {
 
         try {
             
-            const id = Number(req.params);
+            const id = Number(req.params.id);
+            console.log(id);
 
-            const deletedUser = await deleteUserService;
+            const deletedUser = await deleteUserService.execute(id);
 
             return res.status(200).json({message: `Usuário excluído com sucesso!`})
 
