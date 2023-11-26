@@ -1,4 +1,4 @@
-const knex = require("../connection");
+const knex = require("../config/connection");
 
 
 const userRepository = {
@@ -7,7 +7,10 @@ const userRepository = {
 
         const {nome, email, senha } = userData;
 
-        const newUser = await knex('usuarios').insert({nome, email, senha}).into('usuarios').returning('*');
+        const newUser = await knex('usuarios')
+            .insert({nome, email, senha})
+            .into('usuarios')
+            .returning('*');
 
         return newUser;
 
@@ -15,9 +18,12 @@ const userRepository = {
 
     update: async function (userData){
 
-        const updatedUser = await knex('usuarios').insert({
-            userData
-        }).returning('*');
+        const {nome, email, senha } = userData;
+
+        const updatedUser = await knex('usuarios')
+        .insert({nome, email, senha})
+        .into('usuarios')
+        .returning('*');
 
         return updatedUser;
 
