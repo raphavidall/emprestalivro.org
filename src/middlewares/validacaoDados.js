@@ -1,4 +1,4 @@
-const knex = require('../connection');
+const knex = require('../config/connection');
 
 const validacaoDados = async (req, res, next) => {
     const {nome, email, senha } = req.body;
