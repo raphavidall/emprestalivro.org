@@ -18,11 +18,11 @@ const userRepository = {
 
     update: async function (userData){
 
-        const {nome, email, senha } = userData;
+        const {nome, email, senha, id } = userData;
 
         const updatedUser = await knex('usuarios')
-        .insert({nome, email, senha})
-        .into('usuarios')
+        .update({nome, email, senha})
+        .where({id})
         .returning('*');
 
         return updatedUser;
