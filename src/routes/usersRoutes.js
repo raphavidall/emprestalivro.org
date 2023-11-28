@@ -5,7 +5,7 @@ const { createUserController, updateUserController, deleteUserController } = req
 const usersRoutes = express();
 
 usersRoutes.post('/usuarios', validacaoDados, createUserController.handle);
-usersRoutes.put('/usuarios/:id', updateUserController.handle);
+usersRoutes.put('/usuarios/:id', validacaoDados, updateUserController.handle);
 usersRoutes.delete('/usuarios/:id', deleteUserController.handle);
 
 module.exports = usersRoutes;
