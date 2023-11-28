@@ -19,11 +19,23 @@ const validacaoDados = async (req, res, next) => {
 
     const emailExiste = await knex.select('*').from('usuarios').where({email});
 
-    if(emailExiste[0]){
-        return res.status(400).json({message: `E-mail já cadastrado.`});
+    const id = Number(req.params.id);
+    console.log(emailExiste);
+
+    if(id && emailExiste[0]){
+        if(emailExiste[0].id === id){
+            next();
+        }else{
+            return res.status(400).json({message: `E-mail já cadastrado.`});
+        }
+    }else{
+        if(emailExiste[0]){
+            return res.status(400).json({message: `E-mail já cadastrado.`});
+        }else{
+            next();
+        }
     }
 
-    next();
 }
 
 module.exports = validacaoDados;
