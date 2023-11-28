@@ -14,12 +14,14 @@ const updateUserController = {
             const criptPass = await bcrypt.hash(senha, 10);
 
             const updatedUser = await updateUserService.execute({nome, email, senha: criptPass, id});
+            
+            const { senha:_, ...user} = updatedUser[0];
 
-            return res.status(200).json({message: `Usuário atualizado com sucesso! ${updatedUser}`});
+            return res.status(200).json({message: `Usuário atualizado com sucesso!`, user});    
 
         } catch (error) {
-            console.log(error);
-            return res.status(500).json({error});
+
+            return res.status(500).json({message: `Erro interno do servidor (updateUserController).`});
 
         }
 
