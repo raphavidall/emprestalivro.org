@@ -35,6 +35,13 @@ const userRepository = {
 
         return deletedUser;
 
+    },
+
+    get: async function (){
+
+        const users = await knex('usuarios').select('*');
+
+        return users;
     }
 
 }

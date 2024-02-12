@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/raphavidall/emprestalivro.org#readme",
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.3"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
